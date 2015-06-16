@@ -2,6 +2,10 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+body{
+  font-weight: normal;
+}
+
 // make all images responsive by default
 img {
   @extend .img-responsive;
@@ -79,4 +83,51 @@ section {
   @extend .btn;
   @extend .btn-primary;
   @extend .btn-xs;
+}
+
+.form-control{
+  //border-radius: 0;
+  transition: none;
+  -webkit-box-shadow: none !important;
+  -moz-box-shadow: none !important;
+  box-shadow: none !important;
+}
+
+.btn-hollow{
+
+  border-radius: 3px;
+  border-color: #fff;
+  color: #fff;
+  border-bottom: 4px solid #fff;
+  border-right: 2px solid #fff;
+
+  &.btn-xs, &.btn-sm{
+    border-bottom-width: 1px; 
+    border-right-width: 1px;
+  }
+
+  &:hover{
+    background-color: rgba(255, 255, 255, 0.18);
+    color: white;
+  }
+}
+
+.progress-bar-default {
+  background-color: #BABABA;
+}
+
+.alert.alert-warning.alert-inline{
+  background-color: rgba(242, 222, 222, 0);
+  border-width: 0;
+  color: #FF9B00;
+  font-size: 1.465rem;
+  .fa{
+    margin-right: 8px;
+    color: rgb(255, 155, 0);
+    font-size: 1.6rem;
+  }
+  .close{
+    color: white;
+    top: 0;
+  }
 }

@@ -1,0 +1,8 @@
+console.log("called create.js.erb")
+$('#summoner-name-progress-holder .progress-bar').removeClass("progress-bar-default").addClass("progress-bar-success")
+$('#summoner-name-progress-holder .progress-bar').css('width', '100%').attr('aria-valuenow', 100);
+var loadingHolder = $('#summoner-name-progress-holder .loading-holder')
+loadingHolder.find('.fa').removeClass("fa-spinner").removeClass("fa-spin").addClass("fa-check").css({"color": "#74C274"});
+loadingHolder.find("#loading-text").html("Complete. <strong>Redirecting</strong> ");
+
+window.location = '<%= summoner_path(@summoner.summoner_id) %>'

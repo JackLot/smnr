@@ -1,0 +1,139 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require font-awesome
+ *= require_self
+ */
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "framework_and_overrides";
+
+.section {
+
+  height: 700px;
+  padding-top: 25px;
+  padding-bottom:50px;
+  //overflow:auto;
+  //font-family: "Raleway", sans-serif;
+  border-bottom: 1px solid rgb(116, 116, 116);
+
+  h1{
+    //font-family: "PT Sans Caption", sans-serif;
+    font-weight: bold;
+    font-size: 2.8rem;
+    text-shadow: #444 0 1px 1px;
+    text-transform: uppercase;
+    padding-top: 5px;
+    .fa{
+      font-size: 3rem;
+    }
+  }
+
+  .header{
+
+    #login-reg-actions{
+
+      color: white;
+      font-size: 14px;
+
+      li#login{
+        margin-right: 2px;
+        a, a:hover{
+          color: white;
+          padding: 10px;
+        }
+      }
+
+      li#register{
+        .btn-hollow{
+          font-size: 14px;
+          //font-weight: bold;
+        }
+      }
+    }
+  }
+
+  .container#jumbo-tron{
+    //padding-top: 10%;
+  }
+
+  #logo-holder{
+    position: relative;
+    text-align: center;
+    height: 66px;
+    margin-bottom: 30px;
+    #logo{
+      position: relative;
+      z-index:2;
+    }
+    #logo-inverse{
+      position: relative;
+      top: -58px;
+      right: -3px;
+      z-index: 0;
+    }
+  }
+
+  .summoner-name-form-holder{
+
+    margin-top: 15%;
+
+    input[type=text]{
+      @extend .form-control;
+      width: 100%;
+      font-weight: normal;
+      height: 45px;
+      //padding: 2px 15px inherit 15px;
+      font-size: 16px;
+    }
+    .progress{
+      border-radius: 0px 0px 4px 4px;
+      position: relative;
+      top:-2px;
+      height:12px;
+      margin-bottom: 15px;
+    }
+    #summoner-name-progress-holder{
+      @extend .hide;
+      .loading-holder{
+        text-align: center;
+        #loading-text{
+          margin-left: 5px;
+        }
+        #loading-text:after{
+          content: "...";
+        }
+      }
+    }
+    
+    &.loading{
+      #summoner-name-progress-holder{
+        @extend .show;
+      }
+      .summoner-name{
+        //@extend .form-control[disabled];
+        //disabling the input has to be manually set/disabled in JS
+      }
+    }
+  }
+  
+}
+
+.bg-1 {
+  background: url('/assets/wall1.jpg') no-repeat center center fixed;
+  color: #fff;
+  background-size: cover;
+}
+
+
